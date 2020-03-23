@@ -3,7 +3,7 @@
     <parent>
         <artifactId>pet-clinic</artifactId>
         <groupId>com.springframework</groupId>
-        <version>1.0.0</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -37,9 +37,4 @@
         <scope>test</scope>
     </dependency>
 </dependencies>
-
-
-  <scm>
-    <tag>pet-clinic-1.0.0</tag>
-  </scm>
 </project>
