@@ -48,7 +48,7 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:JohnRambo69/Pet-Clinic.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:https://github.com/JohnRambo69/Pet-Clinic.git</developerConnection>
 	  <tag>pet-clinic-0.0.1</tag>
   </scm>
 
