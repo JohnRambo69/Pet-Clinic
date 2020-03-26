@@ -1,8 +1,19 @@
-version: 2
-  jobs:
-    build:
-      docker:
-          - image: circleci/ruby:2.4.1
-      steps:
-        - checkout
-        - run: echo "A first hello"
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run: mvn install -DskipTests
+  test:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run: mvn integration-test
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
