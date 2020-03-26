@@ -1,10 +1,27 @@
-version: 2.1
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
 
-orbs:
-  maven: circleci/maven@0.0.12
+    working_directory: ~/repo
 
-workflows:
-  maven_test:
-    jobs:
-      - run: mvn clean install-DskipTests
-      - maven/test # checkout, build, test, and upload test results
+    enviroment:
+      MAVEN_OPTS: ~Xmx3200m
+
+    steps:
+      - checkout
+
+    - restore_catche:
+        keys:
+          - v1-dependencies-{{ checksum "pom.xml}}
+          - v1-dependencies-
+   - run: mvn install - DskipTests
+
+   - run: mvn dependency:go-offline
+
+   - save_cache:
+       paths:
+         - ~/.m2
+         key: v1-dependencies-{{ checksum "pom.xml" }}
+    - run: mvn integration-test
