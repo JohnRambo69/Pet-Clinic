@@ -23,6 +23,12 @@
 		<relativePath />
 	</parent>
 
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+
+
+	</dependencies>
+
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
